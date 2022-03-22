@@ -33,7 +33,7 @@ class Product extends React.Component {
 
   findProductById = (productId) => {
     axios
-      .get("http://localhost:8080/products/" + productId)
+      .get("https://supermatt-backend.herokuapp.com/products/" + productId)
       .then((response) => {
         if (response.data != null) {
           this.setState({
@@ -63,7 +63,7 @@ class Product extends React.Component {
       description: this.state.description,
     };
 
-    axios.post("http://localhost:8080/products", product).then((response) => {
+    axios.post("https://supermatt-backend.herokuapp.com/products", product).then((response) => {
       if (response.data != null) {
         this.setState({ show: true, method: "post" });
         setTimeout(() => this.setState({ show: false }), 3000);
@@ -84,7 +84,7 @@ class Product extends React.Component {
       description: this.state.description,
     };
 
-    axios.put("http://localhost:8080/products", product).then((response) => {
+    axios.put("https://supermatt-backend.herokuapp.com/products", product).then((response) => {
       if (response.data != null) {
         this.setState({ show: true, method: "put" });
         setTimeout(() => this.setState({ show: false }), 3000);

@@ -20,7 +20,7 @@ class ProductList extends React.Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:8080/products")
+      .get("https://supermatt-backend.herokuapp.com/products")
       .then((response) => response.data)
       .then((data) => {
         this.setState({ products: data });
@@ -28,7 +28,7 @@ class ProductList extends React.Component {
   }
 
   deleteProduct = (productId) => {
-    axios.delete("http://localhost:8080/products/" + productId).then((response) => {
+    axios.delete("https://supermatt-backend.herokuapp.com/products/" + productId).then((response) => {
       if (response.data != null) {
         this.setState({ show: true });
         setTimeout(() => this.setState({ show: false }), 3000);
