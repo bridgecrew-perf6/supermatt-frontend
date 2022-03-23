@@ -26,8 +26,10 @@ class Product extends React.Component {
 
   componentDidMount() {
     const productId = +this.props.match.params.id;
+    console.log(productId);
     if (productId) {
       this.findProductById(productId);
+      console.log(this.findProductById(productId));
     }
   }
 
