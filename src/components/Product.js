@@ -127,7 +127,7 @@ class Product extends React.Component {
           </Card.Header>
           <Form
             onReset={this.resetProduct}
-            onSubmit={this.state.id ? this.updateProduct : this.submitProduct}
+            onSubmit={this.props.match.params.id ? this.updateProduct : this.submitProduct}
             id="productFormId"
           >
             <Card.Body>
